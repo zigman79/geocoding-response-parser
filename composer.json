@@ -3,6 +3,7 @@
     "description": "Google Maps Api Geoding Response Parser",
     "type": "library",
     "minimum-stability": "dev",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "Michael Labuschke",

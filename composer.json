@@ -1,0 +1,19 @@
+{
+    "name": "zigman/geocoding-response-parser",
+    "description": "Google Maps Api Geoding Response Parser",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Michael Labuschke",
+            "email": "m.labuschke@futec-gmbh.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "GeocondingResponseParser": "src/"
+        }
+    }
+}

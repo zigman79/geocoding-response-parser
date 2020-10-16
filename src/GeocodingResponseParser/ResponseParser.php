@@ -1,9 +1,10 @@
 <?php
-namespace GeocodingResponseParser;
+namespace Zigman\GeocondingResponseParser;
 
-class SayHello
+class ResponseParser
 {
     protected $response;
+    
     public function __construct($response) {
         $this->response = json_decode($response);
     }
@@ -13,6 +14,6 @@ class SayHello
     }
 
     public function getCity() {
-        
+
     }
 }

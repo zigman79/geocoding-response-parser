@@ -55,11 +55,11 @@ class ResponseParser
     }
 
     public function getLatitude() {
-        return $this->result[0]->geometry->location->lat;
+        return $this->response->results[0]->geometry->location->lat;
     }
 
     public function getLongitude() {
-        return $this->result[0]->geometry->location->lng;
+        return $this->response->results[0]->geometry->location->lng;
     }
 
 }

@@ -59,15 +59,15 @@ class ResponseParser
     }
 
     public function formatted_address() {
-        return $this->response->results[0]->formatted_address;
+        return $this->response->results[$this->index]->formatted_address;
     }
     
     public function getLatitude() {
-        return $this->response->results[0]->geometry->location->lat;
+        return $this->response->results[$this->index]->geometry->location->lat;
     }
 
     public function getLongitude() {
-        return $this->response->results[0]->geometry->location->lng;
+        return $this->response->results[$this->index]->geometry->location->lng;
     }
 
 }

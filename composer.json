@@ -1,7 +1,6 @@
 {
     "name": "zigman/geocoding-response-parser",
     "description": "Google Maps Api Geoding Response Parser",
-    "type": "library",
     "minimum-stability": "dev",
     "license": "GPL-3.0-only",
     "authors": [
@@ -15,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Zigman\\GeocodingResponseParser\\": "src/"
+            "Zigman\\": "src/"
         }
     }
 }

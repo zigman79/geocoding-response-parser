@@ -11,4 +11,8 @@ class SayHello
     public function dump() {
         var_dump($this->response);
     }
+
+    public function getCity() {
+        
+    }
 }

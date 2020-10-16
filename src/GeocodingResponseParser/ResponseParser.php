@@ -53,4 +53,13 @@ class ResponseParser
     public function hasFullAddress() {
         return $this->getCity() && $this->getCitycode() && $this->getStreet() && $this->getStreetNumber();
     }
+
+    public function getLatitude() {
+        return $this->result[0]->geometry->location->lat;
+    }
+
+    public function getLongitude() {
+        return $this->result[0]->geometry->location->lng;
+    }
+
 }

@@ -29,24 +29,28 @@ class ResponseParser
         return false;
     }
     
+    public function getStreet() {
+        return $this->findAddressType("route");
+    }
+    
+    public function getStreetNumber() {
+        return $this->findAddressType("street_number");
+    }
+    
+    public function getFullStreet() {
+        return $this->getStreet() . " " .$this->getStreetNumber();
+    }
+    
     public function getCity()
     {
         return $this->findAddressType("locality");
     }
 
-    public function getStreet() {
-        return $this->findAddressType("route");
-    }
-
-    public function getStreetNumber() {
-        return $this->findAddressType("street_number");
-    }
-
-    public function getFullStreet() {
-        return $this->getStreet() . " " .$this->getStreetNumber();
-    }
-
     public function getCitycode() {
         return $this->findAddressType("postal_code");
+    }
+
+    public function hasFullAddress() {
+        return $this->getCity() && $this->getCitycode() && $this->getStreet() && $this->getStreetNumber();
     }
 }

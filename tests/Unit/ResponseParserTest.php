@@ -80,3 +80,9 @@ it('returns longitude', function ($response) {
     expect($parser->getLongitude())->toEqual('12.394733');
 
 })->with('response');
+
+it('returns correct street with multiple results', function ($response) {
+    $parser = new ResponseParser($response);
+
+    expect($parser->getStreet())->toEqual('Merseburger Straße');
+})->with('longresponse');

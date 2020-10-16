@@ -4,10 +4,14 @@ namespace Zigman\GeocodingResponseParser;
 class ResponseParser
 {
     protected $response;
+    protected $index = 0;
     
     public function __construct($response)
     {
         $this->response = json_decode($response);
+        while (count($this->response->results)>$this->index && strlen($this->getStreet())<=7) {
+            $this->index++;
+        }
     }
 
     public function response()
@@ -16,10 +20,10 @@ class ResponseParser
     }
 
     private function findAddressType($search) {
-        if (!isset($this->response->results[0]->address_components)) {
+        if (!isset($this->response->results[$this->index]->address_components)) {
             return false;
         }
-        foreach ($this->response->results[0]->address_components as $component) {
+        foreach ($this->response->results[$this->index]->address_components as $component) {
             foreach ($component->types as $type) {
                 if ($type == $search) {
                     return $component->long_name;

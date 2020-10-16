@@ -1,5 +1,5 @@
 <?php
-namespace Zigman\GeocondingResponseParser;
+namespace Zigman\GeocodingResponseParser;
 
 class ResponseParser
 {

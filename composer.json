@@ -2,6 +2,7 @@
     "name": "zigman/geocoding-response-parser",
     "description": "Google Maps Api Geoding Response Parser",
     "type": "library",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Michael Labuschke",

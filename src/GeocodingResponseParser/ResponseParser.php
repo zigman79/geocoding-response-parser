@@ -54,12 +54,16 @@ class ResponseParser
         return $this->getCity() && $this->getCitycode() && $this->getStreet() && $this->getStreetNumber();
     }
 
+    public function formatted_address() {
+        return $this->response->results[0]->formatted_address;
+    }
+    
     public function getLatitude() {
-        return $this->result[0]->geometry->location->lat;
+        return $this->response->results[0]->geometry->location->lat;
     }
 
     public function getLongitude() {
-        return $this->result[0]->geometry->location->lng;
+        return $this->response->results[0]->geometry->location->lng;
     }
 
 }

@@ -9,7 +9,7 @@ class ResponseParser
     public function __construct($response)
     {
         $this->response = json_decode($response);
-        while (count($this->response->results)+1>$this->index && strlen($this->getStreet())<=7) {
+        while (count($this->response->results)-1>$this->index && strlen($this->getStreet())<=7) {
             $this->index++;
         }
     }

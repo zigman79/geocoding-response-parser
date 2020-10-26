@@ -19,14 +19,14 @@ class ResponseParser
         return $this->response;
     }
 
-    private function findAddressType($search) {
+    private function findAddressType($search,$name = "long_name") {
         if (!isset($this->response->results[$this->index]->address_components)) {
             return false;
         }
         foreach ($this->response->results[$this->index]->address_components as $component) {
             foreach ($component->types as $type) {
                 if ($type == $search) {
-                    return $component->long_name;
+                    return $component->$name;
                 }
             }
         }
@@ -52,6 +52,14 @@ class ResponseParser
 
     public function getCitycode() {
         return $this->findAddressType("postal_code");
+    }
+
+    public function getCountry() {
+        return $this->findAddressType("country");
+    }
+
+    public function getCountryShortName() {
+        return $this->findAddressType("country","short_name");
     }
 
     public function hasFullAddress() {
